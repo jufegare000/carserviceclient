@@ -22,18 +22,20 @@ export class CarEditModule {
   mapResultToArray(result: any) {
     const ownerList: Array<Owner> = [];
     for (const owner of result._embedded.owners) {
+      if(owner.dni){
       let currentOwner: Owner = {
         dni: owner.dni,
         name: owner.name,
         profession: owner.profession
-      };
-      ownerList.push(currentOwner);
+        };
+        ownerList.push(currentOwner);
+      }
     }
     return ownerList;
   }
 
   loadCarOwner() {
-    
+
   }
 
  }

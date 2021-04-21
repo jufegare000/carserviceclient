@@ -1,5 +1,6 @@
 export interface Owner {
-    dni: number;
+    dni: string;
     name: string;
     profession?: string;
+    selected?: boolean;
 }

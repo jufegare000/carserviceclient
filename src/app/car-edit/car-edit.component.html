@@ -11,12 +11,14 @@
         </mat-form-field>
       </mat-card-content>
       <mat-form-field appearance="fill">
+
         <mat-label>Owner</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let owner of owners" [value]="owner.dni">
+        <mat-select [(ngModel)]="owner" (change)="eventSelection($event.value)"  [ngModelOptions]="{standalone: true}">
+          <mat-option  *ngFor="let owner of owners" [value]="owner.name">
             {{owner.name}}
           </mat-option>
         </mat-select>
+
       </mat-form-field>
       <mat-card-actions>
         <button mat-raised-button color="primary" type="submit"

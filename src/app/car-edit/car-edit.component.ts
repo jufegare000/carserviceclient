@@ -16,6 +16,7 @@ export class CarEditComponent implements OnInit, OnDestroy {
   car: any = {};
   owners: Array<Owner>;
   sub: Subscription;
+  ownerSelected: Owner;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -26,10 +27,7 @@ export class CarEditComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
 
-    this.cardEditModule.getOwnerList().subscribe((data: any)=> {
-      this.owners = this.cardEditModule.mapResultToArray(data);
-      console.log(this.owners)
-     } );
+    this.loadOwners();
 
     this.sub = this.route.params.subscribe(params => {
       const id = params['id'];
@@ -38,6 +36,7 @@ export class CarEditComponent implements OnInit, OnDestroy {
           if (car) {
             this.car = car;
             this.car.href = car._links.self.href;
+            // this.showCarOwnerInSelect();
             this.giphyService.get(car.name).subscribe(url => car.giphyUrl = url);
           } else {
             console.log(`Car with id '${id}' not found, returning to list`);
@@ -47,6 +46,20 @@ export class CarEditComponent implements OnInit, OnDestroy {
       }
     });
   }
+
+  showCarOwnerInSelect(){
+  }
+
+  loadOwners() {
+    this.cardEditModule.getOwnerList().subscribe((data: any)=> {
+      this.owners = this.cardEditModule.mapResultToArray(data);
+     } );
+  }
+
+
+  eventSelection(event){
+    this.ownerSelected = event.name;
+   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();

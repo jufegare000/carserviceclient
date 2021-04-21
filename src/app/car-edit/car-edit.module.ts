@@ -14,10 +14,11 @@ export class CarEditModule {
 
   constructor(private ownerService: OwnerService) { }
 
-  getOwnerList()//: Array<Owner> 
+  getOwnerList()
   {
     return this.ownerService.getAll();
   }
+
   mapResultToArray(result: any) {
     const ownerList: Array<Owner> = [];
     for (const owner of result._embedded.owners) {
@@ -30,4 +31,9 @@ export class CarEditModule {
     }
     return ownerList;
   }
+
+  loadCarOwner() {
+    
+  }
+
  }

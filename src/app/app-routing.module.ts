@@ -23,9 +23,13 @@ const routes: Routes = [
     path: 'owners-list',
     component: OwnersListComponent
   },
+  {
+    path: 'owner-add',
+    component: OwnerComponent
+  },
 
   {
-    path: 'owner-edit/:dni',
+    path: 'owner-edit/:id',
     component: OwnerComponent
   }
 

@@ -30,7 +30,7 @@ export class OwnersListComponent implements OnInit {
   deleteOwners(event: any){
 
     this.toDelete.forEach((owner)=> {
-      this.ownerService.remove(owner.dni);
+      this.ownerService.remove(owner.href);
     })
   }
 

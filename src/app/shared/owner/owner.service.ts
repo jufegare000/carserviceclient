@@ -30,9 +30,9 @@ export class OwnerService {
     return result;
   }
 
-  remove(dni: string) {
-    console.log(`${dni} will be removed`)
-    return this.http.delete(dni);
+  remove(href: string) {
+    console.log(`${href} will be removed`)
+    return this.http.delete(href);
   }
 
 }

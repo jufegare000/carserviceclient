@@ -3,4 +3,6 @@ export interface Owner {
     name: string;
     profession?: string;
     selected?: boolean;
+    href?: string;
+    id?: number;
 }

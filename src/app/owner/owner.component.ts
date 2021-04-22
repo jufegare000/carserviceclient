@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Owner } from '../owner/owner.model';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GiphyService } from '../shared/giphy/giphy.service';
 import { NgForm } from '@angular/forms';
 
 import { OwnerService } from '../shared/owner/owner.service';

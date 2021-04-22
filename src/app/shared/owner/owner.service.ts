@@ -16,7 +16,8 @@ export class OwnerService {
   }
 
   get(dni: string) {
-    return this.http.get(this.OWNER_API + '/' + dni);
+    const route = this.OWNER_API + '/search/findByDni/?dni=' + dni;
+    return this.http.get(route);
   }
 
   save(owner: any): Observable<any> {
@@ -34,5 +35,4 @@ export class OwnerService {
     console.log(`${href} will be removed`)
     return this.http.delete(href);
   }
-
 }

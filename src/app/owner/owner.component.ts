@@ -28,24 +28,28 @@ export class OwnerComponent implements OnInit, OnDestroy {
 
     this.sub = this.route.params.subscribe(params => {
       const id = params['id'];
-      if (id) {
-        console.log(id);
-        this.ownerService.get(id).subscribe((owner: any) => {
-          console.log(owner)
-          if (owner) {
-            this.owner = owner;
-            this.owner.href = owner._links.self.href;
-            // this.showCarOwnerInSelect();
-          } else {
-            console.log(`owner with id '${id}' not found, returning to list`);
-            this.gotoList();
-          }
-        });
-      }
+      this.mapOnwerInView(id);
     });
   }
 
   showCarOwnerInSelect(){
+  }
+
+  mapOnwerInView(id) {
+    if (id) {
+      console.log(id);
+      this.ownerService.get(id).subscribe((owner: any) => {
+        console.log(owner)
+        if (owner) {
+          this.owner = owner;
+          this.owner.href = owner._links.self.href;
+          // this.showCarOwnerInSelect();
+        } else {
+          console.log(`owner with id '${id}' not found, returning to list`);
+          this.gotoList();
+        }
+      });
+    }
   }
 
 

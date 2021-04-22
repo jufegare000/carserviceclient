@@ -21,8 +21,8 @@ export class OwnerService {
 
   save(owner: any): Observable<any> {
     let result: Observable<Object>;
-    console.log(`${owner} will be removed`)
-    if (owner['dni']) {
+    console.log(`${owner} will be added`)
+    if (owner['href']) {
       result = this.http.put(owner.href, owner);
     } else {
       result = this.http.post(this.OWNER_API, owner);
@@ -30,7 +30,7 @@ export class OwnerService {
     return result;
   }
 
-  remove(href: string) {
+  remove(href) {
     console.log(`${href} will be removed`)
     return this.http.delete(href);
   }

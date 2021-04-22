@@ -4,9 +4,14 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarEditComponent } from './car-edit/car-edit.component';
 import { OwnersListComponent} from './owners-list/owners-list.component';
 import { OwnerComponent } from './owner/owner.component';
+import { MainViewComponent } from './main-view/main-view.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/car-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  {
+    path: '',
+    component: MainViewComponent
+  },
   {
     path: 'car-list',
     component: CarListComponent

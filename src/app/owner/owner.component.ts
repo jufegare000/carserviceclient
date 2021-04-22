@@ -20,8 +20,7 @@ export class OwnerComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private ownerService: OwnerService,
-              private giphyService: GiphyService) {
+              private ownerService: OwnerService) {
   }
 
   async ngOnInit() {
@@ -74,6 +73,7 @@ export class OwnerComponent implements OnInit, OnDestroy {
 
   remove(href) {
     this.ownerService.remove(href).subscribe(result => {
+      console.log(result);
       this.gotoList();
     }, error => console.error(error));
   }

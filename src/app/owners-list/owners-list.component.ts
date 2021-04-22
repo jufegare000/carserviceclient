@@ -50,7 +50,7 @@ export class OwnersListComponent implements OnInit, OnDestroy {
 
     console.log(this.cars)
     
-
+    
     this.toDelete.forEach((owner)=> {
       this.cars.forEach(car => {
         if(car.ownerDni === owner.dni){

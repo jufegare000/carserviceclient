@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Used APIs: 
+    https://thawing-chamber-47973.herokuapp.com/cars
+    https://thawing-chamber-47973.herokuapp.com/cool-cars
+    https://thawing-chamber-47973.herokuapp.com/owners
+
+## Components:
+    -MainView: Display options: Owner List or Car List
+    -Car List: Display Cars Created in the system with its owners
+    -Owner List: Display the owners created in the system
+    -Owner: Add or Edit Owner
+    
